@@ -1,11 +1,14 @@
 import sqlite3
 
 def get_connection():
+
     conn = sqlite3.connect(
         "data/surgicontrol.db",
         check_same_thread=False
     )
 
-    conn.execute("PRAGMA foreign_keys = ON")
+    conn.execute(
+        "PRAGMA foreign_keys = ON"
+    )
 
     return conn
